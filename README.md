@@ -76,4 +76,4 @@ The following table has the methods you will need to implement along with their 
 | `Enumerable#my_none?`           | spec/my_none_spec.rb            |                                                                       |
 | `Enumerable#my_count`           | spec/my_count_spec.rb           |                                                                       |
 | `Enumerable#my_map`             | spec/my_map_spec.rb             |                                                                       |
-| `Enumerable#my_inject`          | spec/my_inject_spec.rb              
+| `Enumerable#my_inject`          | spec/my_inject_spec.rb

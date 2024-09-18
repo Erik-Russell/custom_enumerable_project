@@ -8,13 +8,13 @@ RSpec.describe Enumerable do
   describe '#my_none?' do
     context 'when no elements match the condition' do
       it 'returns true' do
-        expect(enumerable.my_none? { |value| value < 0 }).to eq true
+        expect(enumerable.my_none? { |value| value < 0 }).to be true
       end
     end
 
     context 'when any element matches the condition' do
       it 'returns false' do
-        expect(enumerable.my_none? { |value| value == 1 }).to eq false
+        expect(enumerable.my_none? { |value| value == 1 }).to be false
       end
     end
   end

@@ -8,13 +8,13 @@ RSpec.describe Enumerable do
   describe '#my_any?' do
     context 'when any element matches the condition' do
       it 'returns true' do
-        expect(enumerable.my_any?(&:even?)).to eq true
+        expect(enumerable.my_any?(&:even?)).to be true
       end
     end
 
     context 'when no element matches the condition' do
       it 'returns false' do
-        expect(enumerable.my_any?(&:negative?)).to eq false
+        expect(enumerable.my_any?(&:negative?)).to be false
       end
     end
   end

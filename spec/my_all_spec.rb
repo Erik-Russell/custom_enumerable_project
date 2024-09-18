@@ -8,13 +8,13 @@ RSpec.describe Enumerable do
   describe '#my_all?' do
     context 'when all elements match the condition' do
       it 'returns true' do
-        expect(enumerable.my_all? { |value| value > 0 }).to eq true
+        expect(enumerable.my_all? { |value| value > 0 }).to be true
       end
     end
 
     context 'when any element does not match the condition' do
       it 'returns false' do
-        expect(enumerable.my_all? { |value| value < 5 }).to eq false
+        expect(enumerable.my_all? { |value| value < 5 }).to be false
       end
     end
   end
