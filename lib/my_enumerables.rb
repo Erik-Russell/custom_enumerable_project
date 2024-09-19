@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Enumberable - a test of creating custom enumerables
 module Enumerable
   # Your code goes here
 end
@@ -10,4 +11,9 @@ end
 # to this method
 class Array
   # Define my_each here
+  def my_each
+    for item in self # rubocop:disable Style/For
+      yield(item)
+    end
+  end
 end
