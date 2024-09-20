@@ -40,9 +40,23 @@ module Enumerable
     true
   end
 
-  def my_count; end
+  def my_count
+    return size unless block_given?
 
-  def my_map; end
+    count = 0
+    for item in self # rubocop:disable Style/For
+      count += 1 if yield(item)
+    end
+    count
+  end
+
+  def my_map
+    result = []
+    for item in self
+      result << yield(item)
+    end
+    result
+  end
 
   def my_inject; end
 end
