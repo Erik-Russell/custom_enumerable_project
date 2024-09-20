@@ -52,13 +52,28 @@ module Enumerable
 
   def my_map
     result = []
-    for item in self
+    for item in self # rubocop:disable Style/For
       result << yield(item)
     end
     result
   end
 
-  def my_inject; end
+  def my_inject(*args)
+    if args.last.is_a?(Symbol)
+      symbol = args.pop
+      block = symbol.to_proc
+    end
+
+    initial = args.empty? ? first : args[0]
+
+    start_index = args.empty? ? 1 : 0
+
+    self[start_index..-1].each do |item|
+      initial = block ? block.call(initial, item) : yield(initial, item)
+    end
+
+    initial
+  end
 end
 
 # You will first have to define my_each
