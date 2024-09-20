@@ -19,7 +19,12 @@ module Enumerable
     array_sel
   end
 
-  def my_all?; end
+  def my_all?
+    for item in self # rubocop:disable Style/For
+      return false unless yield(item)
+    end
+    true
+  end
 
   def my_any?; end
 
