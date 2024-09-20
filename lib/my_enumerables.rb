@@ -26,9 +26,19 @@ module Enumerable
     true
   end
 
-  def my_any?; end
+  def my_any?
+    for item in self # rubocop:disable Style/For
+      return true if yield(item)
+    end
+    false
+  end
 
-  def my_none?; end
+  def my_none?
+    for item in self # rubocop:disable Style/For
+      return false if yield(item)
+    end
+    true
+  end
 
   def my_count; end
 
